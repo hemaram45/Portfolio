@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+ <!-- NAVBAR -->
+<nav class="nav">
+    <h2 class="logo">MyPortfolio</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
+        <a href="/login" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<!-- PROJECTS SECTION -->
+<section class="projects-container">
+
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="card project-card">
+            <h2>📊 Student Marks Analysis</h2>
+            <p>
+                A Python-based data analysis project to analyze student marks,
+                calculate averages, and visualize performance using charts.
+            </p>
+
+            <p><strong>Tech Used:</strong> Python, Pandas, Matplotlib</p>
+
+            <button class="btn">View Code</button>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="card project-card">
+            <h2>📈 Sales Dashboard</h2>
+            <p>
+                An interactive dashboard to analyze sales data, trends, and performance
+                using visual charts and summaries.
+            </p>
+
+            <p><strong>Tech Used:</strong> Python, Pandas, Data Visualization</p>
+
+            <button class="btn">View Code</button>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="card project-card">
+            <h2>🌐 Portfolio Website</h2>
+            <p>
+                A personal portfolio website built using HTML, CSS, and Flask
+                to showcase projects and skills.
+            </p>
+
+            <p><strong>Tech Used:</strong> HTML, CSS, Flask</p>
+
+            <button class="btn">View Live</button>
+        </div>
+
+    </div>
+
+</section>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

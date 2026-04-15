@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reply</title>
+</head>
+<body style="background:#0f172a; color:white; text-align:center; font-family:Segoe UI;">
+
+<h2>Reply to {{ data[1] }}</h2>
+
+<p><b>Email:</b> {{ data[2] }}</p>
+<p><b>Message:</b> {{ data[3] }}</p>
+
+<form method="POST">
+    <textarea name="reply" placeholder="Type your reply..." required
+        style="width:300px; height:100px; padding:10px;"></textarea>
+    <br><br>
+    <button style="padding:10px 20px;">Send Reply</button>
+</form>
+
+<h3>💬 Chat History</h3>
+
+<div style="width:400px; margin:auto; text-align:left;">
+
+    {% for chat in chats %}
+        {% if chat[0] == "user" %}
+            <p style="background:#1e293b; padding:10px; border-radius:8px;">
+                👤 <b>User:</b> {{ chat[1] }}
+            </p>
+        {% else %}
+            <p style="background:#38bdf8; padding:10px; border-radius:8px; color:black;">
+                🧑‍💻 <b>Admin:</b> {{ chat[1] }}
+            </p>
+        {% endif %}
+    {% endfor %}
+
+</div>
+
+<br>
+
+<br>
+<a href="/admin" style="color:cyan;">⬅ Back</a>
+
+</body>
+</html>

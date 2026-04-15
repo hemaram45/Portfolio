@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <h2 class="logo">MyPortfolio</h2>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Hi, I'm <span id="typing"></span> 🚀</h1>
+        <p>Python | SQL | Power BI</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="glass about-section" data-aos="fade-up">
+        <h2>About Me</h2>
+
+        <div class="about-container">
+
+            <div class="about-text">
+                <p>
+                    Hello! I'm <strong>Hemaram Prajapati</strong>, a passionate BCA student
+                    who loves working with data and building real-world applications.
+                </p>
+
+                <p>
+                    I specialize in <strong>Python, SQL, Flask</strong> and data visualization tools
+                    like <strong>Power BI</strong>.
+                </p>
+
+                <p>
+                    My goal is to become a professional <strong>Data Analyst</strong> and
+                    create impactful solutions using technology 🚀
+                </p>
+            </div>
+
+            <div class="about-boxes">
+                <div class="box">
+                    <h3>🎓 Education</h3>
+                    <p>BCA (Bachelor of Computer Applications)</p>
+                </div>
+
+                <div class="box">
+                    <h3>💡 Interests</h3>
+                    <p>Data Analysis, Web Development, AI</p>
+                </div>
+
+                <div class="box">
+                    <h3>🎯 Goal</h3>
+                    <p>Become a Professional Data Analyst</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROFILE -->
+ <!-- 🔥 MODERN PROFILE SECTION -->
+<section class="profile-section" data-aos="fade-up">
+
+    <div class="profile-card">
+
+        <!-- LEFT SIDE IMAGE -->
+        <div class="profile-left">
+            <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile">
+        </div>
+
+        <!-- RIGHT SIDE INFO -->
+        <div class="profile-right">
+
+            <h2>👋 Hemaram Prajapati</h2>
+            <p class="tagline">Data Analyst | Python Developer</p>
+
+            <!-- INFO -->
+            <div class="info">
+                <p><strong>📧 Email:</strong> hemaramprajapati@email.com</p>
+                <p><strong>📱 Phone:</strong> 7383884764</p>
+                <p><strong>🎓 Education:</strong> BCA</p>
+            </div>
+
+           <div class="resume-buttons">
+
+    <!-- DOWNLOAD -->
+    <a href="{{ url_for('static', filename='resume.pdf') }}" download class="btn">
+        📄 Download Resume
+    </a>
+
+    <!-- VIEW ONLY -->
+    <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn view-btn">
+        👁 View Resume
+    </a>
+
+</div>
+
+            <!-- SKILLS -->
+            <div class="skills">
+                <h3>Skills</h3>
+
+                <div class="skill">
+                    <span>Python</span>
+                    <div class="progress"><div style="width:90%"></div></div>
+                </div>
+
+                <div class="skill">
+                    <span>SQL</span>
+                    <div class="progress"><div style="width:85%"></div></div>
+                </div>
+
+                <div class="skill">
+                    <span>Flask</span>
+                    <div class="progress"><div style="width:80%"></div></div>
+                </div>
+
+                <div class="skill">
+                    <span>Power BI</span>
+                    <div class="progress"><div style="width:75%"></div></div>
+                </div>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="social">
+                <a href="https://www.linkedin.com/in/hemaram-prajapati-60ba05350?utm_source=share_via&utm_content=profile&utm_medium=member_android">🔗 LinkedIn</a>
+                <a href="https://github.com/dashboard">💻 GitHub</a>
+                <a href="#">📸 Instagram</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- PROJECTS -->
+    <section class="glass projects-section" data-aos="fade-up">
+
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <!-- PROJECT CARD 1 -->
+            <div class="project-card"
+                onclick="openModal('Student Analysis','Analyzed student data using Python, Pandas and visualization libraries.')">
+                <h3>📊 Student Analysis</h3>
+                <p>Click to view details</p>
+            </div>
+
+            <!-- PROJECT CARD 2 -->
+            <div class="project-card"
+                onclick="openModal('Sales Dashboard','Built interactive dashboard using Power BI for business insights.')">
+                <h3>💰 Sales Dashboard</h3>
+                <p>Click to view details</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="glass contact-section">
+        <h2>Contact Me</h2>
+
+        <form action="/submit" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </form>
+    </section>
+
+    <!-- SCROLL BUTTON -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="top-btn">⬆</button>
+
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+
+        // Typing Animation
+        let text = ["Data Analyst", "Python Developer", "Flask Developer"];
+        let i = 0, j = 0, cur = "", del = false;
+
+        function type() {
+            cur = text[i];
+            if (!del) {
+                document.getElementById("typing").innerHTML = cur.substring(0, j++);
+                if (j > cur.length) { del = true; setTimeout(type, 1000); return; }
+            } else {
+                document.getElementById("typing").innerHTML = cur.substring(0, j--);
+                if (j == 0) { del = false; i = (i + 1) % text.length; }
+            }
+            setTimeout(type, del ? 50 : 100);
+        }
+        type();
+
+
+        /*document.addEventListener("mousemove", function(e){
+            const glow = document.createElement("div");
+            glow.style.position="fixed";
+            glow.style.left=e.clientX+"px";
+            glow.style.top=e.clientY+"px";
+            glow.style.width="10px";
+            glow.style.height="10px";
+            glow.style.background="cyan";
+            glow.style.borderRadius="50%";
+            glow.style.pointerEvents="none";
+            glow.style.opacity="0.7";
+            document.body.appendChild(glow);
+    
+            setTimeout(()=>glow.remove(),500);
+        });*/
+        function openModal(title, desc) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-desc").innerText = desc;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // close when clicking outside modal
+        window.onclick = function (event) {
+            let modal = document.getElementById("modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
+
+    <footer class="footer glass-footer">
+
+        <p class="copyright">© 2026 Hemaram Prajapati All Rights Reserved</p>
+
+    </footer>
+</body>
+
+</html>

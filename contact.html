@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <h2 class="logo">MyPortfolio</h2>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-container">
+
+
+        <div class="contact-wrapper">
+
+            <!-- CONTACT FORM -->
+            <div class="card contact-form">
+                <h2>📩 Send Message</h2>
+
+                <form id="contactForm" action="/submit" method="POST">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+
+                    <input type="email" name="email" placeholder="Your Email" required>
+
+                    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+
+                </form>
+            </div>
+
+
+        </div>
+
+    </section>
+
+  <script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    
+    e.preventDefault();
+
+    alert("✅ Message sent successfully!");
+
+    this.submit(); // 🔥 MUST
+
+});
+</script>
+
+</body>
+
+</html>
